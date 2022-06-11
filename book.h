@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<string>
-#include<fstream>
 using namespace std;
 
 class Book
@@ -36,16 +35,11 @@ protected:
     static int tot_users;
 
 public:
-    Library();
     static void show_books();
     void add_book();
     void sort_books();
     //void write_details();
     virtual void get_details() = 0;
-    ~Library()
-    {
-        //write_details();
-    }
 };
 
 class User: public Library

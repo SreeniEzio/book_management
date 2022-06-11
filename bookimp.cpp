@@ -1,20 +1,5 @@
 #include "book.h"
 
-Library::Library()
-{
-    /*ifstream f;
-    Book b;
-    f.open("booklist.bin", ios::in | ios::binary);
-    if(f)
-    {
-    while(f.read((char*)&b, sizeof(b)))
-    {
-        books.push_back(b);
-    }
-    }
-    f.close();*/
-}
-
 void Library::show_books()
 {
     cout<<"Book ID\tBookName\tAuthor\tAvailable"<<endl;
@@ -46,18 +31,6 @@ void Library::sort_books()
     }
 }
 
-/*void Library::write_details()
-{
-    ofstream f;
-    f.open("booklist.bin", ios::out | ios::binary);
-    for(int i = 0; i < books.size(); i++)
-    {
-        f.write((char*)&books[i], sizeof(books[i]));
-    }
-
-    f.close();
-}
-*/
 
 void Library::add_book()
 {
