@@ -2,15 +2,17 @@
 
 Library::Library()
 {
-    ifstream f;
+    /*ifstream f;
     Book b;
     f.open("booklist.bin", ios::in | ios::binary);
+    if(f)
+    {
     while(f.read((char*)&b, sizeof(b)))
     {
         books.push_back(b);
     }
-
-    f.close();
+    }
+    f.close();*/
 }
 
 void Library::show_books()
@@ -44,7 +46,7 @@ void Library::sort_books()
     }
 }
 
-void Library::write_details()
+/*void Library::write_details()
 {
     ofstream f;
     f.open("booklist.bin", ios::out | ios::binary);
@@ -55,15 +57,20 @@ void Library::write_details()
 
     f.close();
 }
+*/
 
 void Library::add_book()
 {
     string name, author;
     int id = books.size() + 1;
     cout<<"Enter name of the book: ";
-    cin>>name;
+    cin.ignore(1024, '\n');
+    //cin>>name;
+    getline(cin, name);
     cout<<"Enter the name of the author: ";
-    cin>>author;
+    //cin>>author;
+    cin.clear();
+    getline(cin, author);
     Book b(id, name, author, true);
     books.push_back(b);
     this->sort_books();

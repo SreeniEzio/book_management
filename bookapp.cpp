@@ -2,8 +2,10 @@
 
 int main()
 {
+    User curr;
     int ch;
     vector<User> users;
+    Library *l;
 
     // User obj;
     
@@ -29,13 +31,21 @@ int main()
             int id;
             cout<<"Please enter your user ID: ";
             cin >> id;
-            User curr;
+            int flag = 0;
             for (int i = 0; i < users.size(); i++) 
             {
                 if(id == users[i].getUser_id())
+                {
                     curr = users[i];
+                    flag = 1;
+                }
             }
 
+            if(flag == 0)
+            {
+                cout<<"User ID doesn't exist\n";
+                break;
+            }
             cout<<"\n\nWelcome "<<curr.getUser_name()<<endl;
             int choice;
             do
@@ -86,7 +96,8 @@ int main()
         case 2:
         {
             User u;
-            u.get_details();
+            l = (User*)&u;
+            l->get_details();
             users.push_back(u);
             break;
         }

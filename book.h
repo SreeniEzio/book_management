@@ -40,10 +40,11 @@ public:
     static void show_books();
     void add_book();
     void sort_books();
-    void write_details();
+    //void write_details();
+    virtual void get_details() = 0;
     ~Library()
     {
-        write_details();
+        //write_details();
     }
 };
 
