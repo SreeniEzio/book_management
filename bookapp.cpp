@@ -7,14 +7,6 @@ int main()
     vector<User> users;
     Library *l;
 
-    // User obj;
-    
-    // ifstream f("userlist.bin", ios::in | ios:: binary);
-    // while(f.read((char*)&obj, sizeof(obj)))
-    // {
-    //     users.push_back(obj);
-    // }
-    // f.close();
 
     do
     {
@@ -109,10 +101,4 @@ int main()
         }
     } while (ch < 3);
     
-    // ofstream o;
-    // o.open("userlist.bin", ios::out|ios::binary);
-    // for(int i = 0; i < users.size(); i++)
-    // {
-    //     o.write((char*)&users[i], sizeof(users[i]));
-    // }
 }

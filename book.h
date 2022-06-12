@@ -25,7 +25,6 @@ public:
         author = a;
         is_available = av;
     }
-    //friend void Library::write_details();
 };
 
 class Library
@@ -38,7 +37,6 @@ public:
     static void show_books();
     void add_book();
     void sort_books();
-    //void write_details();
     virtual void get_details() = 0;
 };
 
